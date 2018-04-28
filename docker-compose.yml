@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  ss:
+    image: lpisces/ss
+    build:
+      context: ./ss
+    tty: true
+
+  privoxy:
+    image: lpisces/privoxy
+    build:
+      context: ./privoxy
+    tty: true
+    ports:
+      - "${PROXY_PORT}:8118"
